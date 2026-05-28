@@ -1,0 +1,6 @@
+build/
+dist/
+*.db
+*.mp3
+temp_audio.mp3
+__pycache__/
