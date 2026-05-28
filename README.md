@@ -1,43 +1,32 @@
-# VoxReader Pro 🎙️
+# VoxReader Desktop - Conversor Neural 🎙️
 
-O **VoxReader** é uma aplicação desktop desenvolvida em Python que utiliza a síntese de voz neural da Microsoft (via engine do Microsoft Edge) para ler e acompanhar textos de arquivos TXT e PDF de forma natural e interativa.
+O **VoxReader** é uma aplicação desktop desenvolvida em Python que utiliza inteligência artificial para converter textos de arquivos TXT e PDF em áudio de alta fidelidade. O sistema utiliza os motores de síntese de voz neural da Microsoft (via engine do Microsoft Edge), dispensando a necessidade de chaves de API pagas.
 
-Esta versão foi totalmente reescrita em **PySide6** (Qt6) para oferecer uma interface de alto desempenho, aceleração gráfica nativa e recursos de reprodução de áudio.
+Esta versão foi construída utilizando a interface moderna do **CustomTkinter** e o reprodutor de áudio integrado do **Pygame Mixer**.
 
 ---
 
 ## ✨ Principais Recursos
 
-- **🎙️ Voz Neural Gratuita:** Síntese de voz com alto nível de naturalidade através do motor do Microsoft Edge, sem a necessidade de chaves de API pagas.
-- **📖 Acompanhamento de Leitura Inteligente (Reading Tracker):** O texto é exibido em um painel interativo que destaca a palavra exata que está sendo dita pelo narrador em tempo real, com rolagem automática da página.
-- **🎛️ Reprodutor de Áudio Avançado:**
-  - Linha do tempo interativa (Scrubber) para arrastar e navegar pelo áudio.
-  - Ajuste dinâmico de velocidade de fala (de $0.5x$ até $2.0x$) com preservação natural do timbre de voz.
-  - Exportação definitiva para arquivos `.mp3`.
-- **🔒 Segurança e Perfis Locais (SQLite):**
-  - Cadastro de usuários com senhas criptografadas localmente.
-  - Níveis de acesso distintos (Usuários comuns visualizam apenas o próprio histórico, enquanto Administradores têm acesso ao painel global).
-  - Senha mestre configurada no primeiro uso para autorização de perfis administrativos.
-- **📂 Suporte a Documentos:** Leitura direta de arquivos de texto simples (`.txt`) e documentos portáteis (`.pdf`).
-- **📺 Modo Tela Cheia:** Atalho nativo usando `F11` para alternar e `Escape` para fechar a tela cheia.
+- **🎙️ Conversão Neural Integrada:** Geração de voz natural em português (Brasil e Portugal) utilizando os perfis gratuitos da Microsoft.
+- **📂 Importação de Documentos:** Suporte para extração automática de caracteres de arquivos de texto simples (`.txt`) e documentos (`.pdf`).
+- **🎧 Reprodutor de Áudio Local:** Player integrado utilizando o `pygame.mixer` para ouvir a prévia do áudio sintetizado diretamente no app.
+- **💾 Exportação de MP3:** Opção para salvar o áudio final de forma definitiva em qualquer pasta do computador.
+- **🕒 Histórico Local de Conversão:**
+  - Registro de conversões anteriores em uma tabela de dados integrada (`Treeview`).
+  - Lógica de busca rápida por nome de arquivo.
+  - Opção de localizar o arquivo salvo diretamente no Explorador de Arquivos do Windows com apenas um clique.
+- **🔒 Segurança e Perfis Isolados (SQLite):**
+  - Isolamento de histórico por usuário.
+  - Perfis de nível "Administrador" exigem validação por Senha Mestre (configurada na primeira inicialização do app).
+  - Administradores têm permissão de auditar o histórico global do aplicativo.
+- **📺 Modo Tela Cheia:** Atalho usando a tecla `F11` para alternar e `Escape` para fechar a tela cheia.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Requisitos e Instalação
 
-- **Python 3.10+**
-- **PySide6 (Qt6):** Interface gráfica e reprodutor multimídia nativo.
-- **edge-tts:** Integração com os servidores de voz neural da Microsoft.
-- **PyPDF2:** Extração de caracteres de arquivos PDF.
-- **SQLite3:** Banco de dados relacional local leve.
-
----
-
-## 🚀 Como Executar o Projeto
-
-### 1. Pré-requisitos
-Certifique-se de ter o Python instalado em sua máquina. Em seguida, clone o repositório:
-
+### 1. Clonar o repositório
 ```bash
 git clone https://github.com/jupges/VoxReader.git
 cd VoxReader
